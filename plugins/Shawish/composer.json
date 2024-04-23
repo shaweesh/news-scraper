@@ -1,0 +1,58 @@
+{
+    "name": "shawish/news-scraper",
+    "description": "A plugin for scraping news articles",
+    "type": "october-cms-plugin",
+    "version": "1.0.0",
+    "keywords": ["octobercms", "plugin", "news"],
+    "homepage": "https://github.com/shawish/news-scraper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shawish",
+            "email": "shawish@example.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "october/plugin": "^2.0",
+        "symfony/browser-kit": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shawish\\NewsScraper\\": "plugins/shawish/news-scraper/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shawish\\NewsScraper\\Tests\\": "plugins/shawish/news-scraper/tests"
+        }
+    },
+    "extra": {
+        "october": {
+            "plugin": {
+                "name": "shawish.newsscraper",
+                "description": "A plugin for scraping news articles",
+                "author": "Shawish",
+                "icon": "icon-newspaper",
+                "permissions": [
+                    "shawish.newsscraper.manage_news"
+                ],
+                "routes": [
+                    [
+                        "name": "news-scraper",
+                        "path": "/backend/shawish/newsscraper",
+                        "permission": "shawish.newsscraper.manage_news"
+                    ]
+                ],
+                "reports": [
+                    [
+                        "name": "last-scrape",
+                        "description": "The date and time of the last news scrape",
+                        "caching": 300,
+                        "permission": "shawish.newsscraper.manage_news"
+                    ]
+                ]
+            }
+        }
+    }
+}

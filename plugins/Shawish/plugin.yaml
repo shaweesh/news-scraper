@@ -1,0 +1,28 @@
+name: "Shawish.NewsScraper"
+description: "A plugin for scraping news articles"
+author: "Shawish"
+homepage: "https://www.example.com"
+version: "1.0.0"
+
+require:
+  - backend
+  - system
+
+permissions:
+  - Shawish.NewsScraper.ManageNews
+
+backend:
+  routes:
+    /backend/shawish/newsscraper/scrape:
+      controller: 'Shawish\NewsScraper\Controllers\NewsController@scrape'
+      action: "post"
+      middleware:
+        - "rainlab.user.auth"
+        - "rainlab.user.roles:administrators"
+
+reports:
+  Shawish.NewsScraper::lastScrape:
+    label: "Last Scrape"
+    description: "The date and time of the last news scrape"
+    caching: 300
+    permission: "Shawish.NewsScraper.ManageNews"

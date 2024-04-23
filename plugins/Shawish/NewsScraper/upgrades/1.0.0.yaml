@@ -1,0 +1,25 @@
+version: 1.0.0
+
+upgrades:
+  create_table:
+    - tableName: shawish_newsscraper_news
+      columns:
+        id:
+          type: integer
+          size: 10
+          unsigned: true
+          primary: true
+          autoIncrement: true
+        title:
+          type: string
+          size: 255
+        url:
+          type: string
+          size: 255
+        content:
+          type: text
+        scraped_at:
+          type: datetime
+      engine: InnoDB
+      charset: utf8mb4
+      collation: utf8mb4_unicode_ci

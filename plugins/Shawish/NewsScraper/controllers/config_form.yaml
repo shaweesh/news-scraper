@@ -1,0 +1,13 @@
+fields:
+  title:
+    label: Title
+    type: text
+    required: true
+  content:
+    label: Content
+    type: textarea
+    required: true
+  published_at:
+    label: Published At
+    type: datetime
+    required: true

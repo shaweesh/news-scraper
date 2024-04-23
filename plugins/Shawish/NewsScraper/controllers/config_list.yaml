@@ -1,0 +1,20 @@
+list:
+  toolbar:
+    buttons:
+      scrape:
+        label: "Scrape News"
+        cssClass: "btn btn-primary"
+        handler: onScrape
+  columns:
+    - label: Title
+      name: title
+      type: text
+    - label: Content
+      name: content
+      type: textarea
+    - label: Created At
+      name: created_at
+      type: datetime
+    - label: Updated At
+      name: updated_at
+      type: datetime
